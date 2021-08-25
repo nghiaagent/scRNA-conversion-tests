@@ -1,14 +1,8 @@
 #### CAREFUL ####
-
 # First, please put your .h5ad file in ./
 # Or download the example dataset.
 
 #### Grab packages ####
-if (!require(pacman)) {
-  install.packages(pacman)
-}
-library(pacman)
-
 if (!requireNamespace("BiocManager", 
                       quietly = TRUE)) {
   install.packages("BiocManager", ask = FALSE)
@@ -34,7 +28,7 @@ download.file(url = "https://humancellatlas.usegalaxy.eu/datasets/11ac94870d0bb3
 
 #### Example dataset ####
 scRNA_object_example <- readH5AD(file = "./mice_scRNA.h5ad") ### PCA, tSNE already calculated and embedded in dataset
-vis_example <- iSEE(scRNA_object_example)
+vis_example <- iSEE(scRNA_object_example) ### Create iSEE app
 shiny::runApp(vis_example)
 
 #### Published dataset ####
