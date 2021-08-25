@@ -23,6 +23,13 @@ if (!requireNamespace("zellkonverter",
 }
 library(zellkonverter)
 
+if (!requireNamespace("iSEE", 
+                      quietly = TRUE)) {
+  BiocManager::install("iSEE", 
+                       ask = FALSE)
+}
+library(iSEE)
+
 
 #### OPTIONAL: Download dataset from humancellatlas.usegalaxy.eu ####
 
@@ -31,4 +38,11 @@ library(zellkonverter)
 
 #### Import data ####
 
+scRNA_object_example <- readH5AD(file = "./data/mice_scRNA.h5ad") ### PCA, tSNE already calculated and embedded in dataset
 
+# scRNA_object_mine <- readH5AD(file = "./data/microglia.h5ad") ### PCA, tSNE already calculated and embedded in dataset
+
+vis_example <- iSEE(scRNA_object_example)
+# vis_mine <- iSEE(scRNA_object_mine)
+
+shiny::runApp(vis_example)
