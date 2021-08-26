@@ -49,7 +49,7 @@ loompy <- reticulate::import('loompy')
 #              destfile = "./mice_scRNA.h5ad")
 
 #### GTN Training dataset ####
-scRNA_object_example <- sceasy::convertFormat("mice_scRNA.h5ad",
+scRNA_object_example <- sceasy::convertFormat("microglia.h5ad",
                                               from = "anndata",
                                               to = "seurat",
                                               outFile = "./mice_scRNA.rds") ### PCA, tSNE already calculated and embedded in dataset
