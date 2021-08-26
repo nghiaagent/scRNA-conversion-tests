@@ -4,7 +4,7 @@
 ### This code probably won't run on your machine. sorry. Please see sceasy docs on how to set up a conda env.###
 
 #### Grab packages ####
-p_load(devtools)
+library(devtools)
 
 if (!requireNamespace("pacman", 
                       quietly = TRUE)) {
@@ -49,7 +49,7 @@ loompy <- reticulate::import('loompy')
 #              destfile = "./mice_scRNA.h5ad")
 
 #### GTN Training dataset ####
-scRNA_object_example <- sceasy::convertFormat("microglia.h5ad",
+scRNA_object_example <- sceasy::convertFormat("mice_scRNA.h5ad",
                                               from = "anndata",
                                               to = "seurat",
                                               outFile = "./mice_scRNA.rds") ### PCA, tSNE already calculated and embedded in dataset
